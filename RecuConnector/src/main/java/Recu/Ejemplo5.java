@@ -16,13 +16,12 @@ public class Ejemplo5 {
 			
 			System.out.println("Introduce el numero de departamento");
 			String dep = sc.next();
-			System.out.println("Introdue el operador(+,-,*,%)");
+			System.out.println("Introdue el operador(+,-,*)");
 			String operador = sc.next();
 			System.out.println("Introduce la cantidad ahora");
 			String cantidad = sc.next();
 			
-			String sql = String.format("UPDATE empleados SET salario = salario %s %s WHERE dept_no = %s\",-\n"
-					+ operador,cantidad, dep);
+			String sql = String.format("UPDATE empleados SET salario = salario %s  %s WHERE dept_no = %s", operador,cantidad, dep);
 			
 			System.out.println(sql);
 			
@@ -34,7 +33,8 @@ public class Ejemplo5 {
 			conexion.close();
 			sc.close();
 		} catch (SQLException e) {
-			System.out.println("Sentecia incorrecta");
+			e.getMessage();
+			e.getErrorCode();
 		}
 	
 	}
