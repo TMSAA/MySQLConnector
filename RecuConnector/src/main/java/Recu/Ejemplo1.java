@@ -9,11 +9,11 @@ public class Ejemplo1 {
 			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/recu33", "Adrian", "Buwiga.33");
 
 			Statement sentencia = conexion.createStatement();
-			String sql = "SELECT * FROM empleados";
+			String sql = "SELECT * FROM departamentos";
 			ResultSet result = sentencia.executeQuery(sql);
 
 			while (result.next()) {
-				System.out.printf("%d, %s, %d %n", result.getInt(1), result.getString(2), result.getInt(8) );
+				System.out.printf("%d, %s, %s, %s", result.getInt(0), result.getString(1), result.getInt(2) );
 			}
 			result.close();
 			sentencia.close();
